@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pago no procesado — Marga Interiorismo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="/assets/profile.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #f2a3b9;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 3rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    .icon { font-size: 3rem; margin-bottom: 1rem; }
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2rem;
+      color: #2c2c2c;
+      margin-bottom: 0.75rem;
+    }
+    p { color: #757570; margin-bottom: 1.5rem; line-height: 1.6; }
+    .back-btn {
+      display: inline-block;
+      background: #6a8042;
+      color: #fff;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: #536533; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">😕</div>
+    <h1>El pago no fue procesado</h1>
+    <p>
+      Puede haber habido un problema con tu tarjeta o el pago fue cancelado.
+      Podés intentarlo de nuevo cuando quieras.
+    </p>
+    <a href="/" class="back-btn">Volver a intentar</a>
+  </div>
+</body>
+</html>

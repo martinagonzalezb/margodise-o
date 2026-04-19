@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias por tu compra! — Marga Interiorismo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="/assets/profile.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #ffe689;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 3rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2rem;
+      color: #6a8042;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      color: #757570;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #6a8042;
+      color: #fff;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: #536533; text-decoration: none; }
+    .expiry-note {
+      font-size: 0.82rem;
+      color: #aaa;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+    .error-msg {
+      color: #c0392b;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🎉</div>
+    <h1>¡Pago aprobado!</h1>
+    <p>Tu compra fue procesada con éxito. Ya podés descargar tu guía.</p>
+    <a id="download-link" class="download-btn" href="#">Descargar guía PDF</a>
+    <p class="expiry-note">Este enlace es válido por 24 horas desde la compra.</p>
+    <p class="error-msg" id="error-msg" style="display:none;">
+      Enlace no disponible. Contactá a <strong>@marga.interiorismo</strong> por Instagram.
+    </p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    const link = document.getElementById('download-link');
+    const errorMsg = document.getElementById('error-msg');
+
+    if (token) {
+      link.href = '/download/' + token;
+    } else {
+      link.style.display = 'none';
+      errorMsg.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
